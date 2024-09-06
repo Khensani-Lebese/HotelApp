@@ -1,0 +1,156 @@
+Initialize React project with Vite
+Install dependencies:
+    react-router-dom
+    redux
+    react-redux
+    firebase
+    styled-components
+    formik
+
+Setup Firebase:
+    - Create Firebase project
+    - Enable Firebase Authentication
+    - Enable Firestore
+    - Enable Firebase Storage
+    - Initialize Firebase in React app:
+        Import and configure Firebase
+        const firebaseConfig = {...}
+        InitializeApp(firebaseConfig)
+        Export Firebase services (Auth, Firestore, Storage)
+
+Import necessary components from react-router-dom
+Define routes:
+    Route("/") → Home Page
+    Route("/login") → Login Page
+    Route("/register") → Registration Page
+    Route("/rooms") → List of Rooms
+    Route("/room/:id") → Single Room Details
+    Route("/profile") → User Profile Page (Protected Route)
+    Route("/admin") → Admin Dashboard (Protected Route)
+    Route("/admin/add") → Add Room (Protected Route)
+    Route("/admin/reservations") → Manage Reservations (Protected Route)
+
+Implement route protection:
+    - Check Firebase Authentication state
+    - Redirect unauthorized users
+
+
+Register Component:
+    - Formik setup for handling registration form
+    - Capture email, password, name, cellphone number
+    - Firebase Authentication: createUserWithEmailAndPassword(email, password)
+    - Store user details in Firestore (users collection)
+    - Redirect to "/profile" on success
+
+Login Component:
+    - Formik setup for handling login form
+    - Capture email, password
+    - Firebase Authentication: signInWithEmailAndPassword(email, password)
+    - Redirect to "/profile" or "/admin" based on user role
+
+Logout Functionality:
+    - Call Firebase Authentication: signOut()
+    - Redirect to "/login"
+
+
+Create Redux store
+Define slices:
+    - User Slice: manage user auth state
+    - Room Slice: manage room data (CRUD operations)
+    - Reservation Slice: manage reservation data (CRUD operations)
+    - UI Slice: manage UI state (loading indicators, notifications)
+    - Configure Redux Thunk for async actions
+
+Room List Component:
+    - Fetch rooms from Firestore
+    - Display room details:
+        - Photo Gallery from Firebase Storage
+        - Google Maps for hotel location
+        - Price, Basic Information, Facilities, Policies
+        - Buttons: Book Now, Share, Save to Favourites
+    - Implement search and filter functionality
+
+Room Details Component:
+    - Display detailed room information
+    - Booking functionality:
+        - Select check-in/check-out dates, room types, guests
+    - Show reviews and ratings
+    - Option to save to favourites
+
+Booking Component:
+    - Capture booking details: check-in/check-out dates, room type, number of guests
+    - Integrate payment gateway (e.g., Stripe)
+    - Store booking info in Firestore (bookings collection)
+    - Update room availability in Firestore
+    - Send booking confirmation via email
+    - Show confirmation notification
+
+
+Profile Component:
+    - Display user info (name, email, cellphone number)
+    - Show booking history
+    - List favourite accommodations
+    - Allow profile updates (name, email, password, cellphone number)
+    - Update user info in Firestore
+
+
+Admin Dashboard Component:
+    - Accessible only by admin users
+    - Options: Add Accommodation, View Reservations, Manage Accommodations
+
+Add Accommodation Component:
+    - Input accommodation details (room type, capacity, price, availability)
+    - Upload images to Firebase Storage
+    - Save details to Firestore (accommodations collection)
+    - Validate form with Formik
+
+Manage Reservations Component:
+    - Fetch reservations from Firestore
+    - Options: Approve, Modify, Cancel reservations
+    - Update Firestore with admin changes
+
+Update Room Component:
+    - Fetch and edit room details
+    - Update Firestore with new details
+    - Ensure real-time updates for availability and pricing
+
+
+
+Search Component:
+    - Capture search filters (location, price, amenities)
+    - Display search results dynamically
+    - Implement URL-based search for shareable results
+
+Reviews Component:
+    - Allow users to leave reviews and ratings
+    - Store reviews and ratings in Firestore (under respective accommodation)
+    - Display average rating for each accommodation
+
+Notification System:
+    - Use Firebase Cloud Messaging (FCM) for notifications
+    - Display in-app notifications and send push notifications for:
+        - Booking confirmations
+        - Updates
+        - Promotions
+
+Data Protection:
+    - Encrypt user data and transactions
+    - Configure Firebase security rules based on user roles
+    - Implement form validation to prevent SQL injection
+    - Use HTTPS for secure payment handling
+
+Optimization:
+    - Code splitting and lazy loading for components
+    - Implement caching strategies for Firebase queries
+    - Optimize images and use responsive design practices
+
+
+Responsive Layout:
+    - Use media queries in styled-components
+    - Test across multiple devices for consistent user experience
+
+
+
+
+
+
