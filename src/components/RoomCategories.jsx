@@ -6,12 +6,12 @@ import logo from '../assets/logo.png';
 
 // Styled components
 const Container = styled.div`
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0;
+  max-width: 1900px;
+  margin: 0;
 `;
 const LogoImage = styled.img`
-  height: 50px; /* Adjust as needed */
+  height: 50px; 
   margin-right: 1rem;
 `;
 

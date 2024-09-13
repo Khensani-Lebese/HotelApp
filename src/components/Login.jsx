@@ -30,7 +30,7 @@ const Login = () => {
         setUserData(userDocSnap.data());
         console.log('User data:', userDocSnap.data());
         // Redirect to a different page, e.g., home page, after login
-        navigate('/home'); // Change '/home' to the route you want to redirect to
+        navigate('/rooms'); // Change '/home' to the route you want to redirect to
       } else {
         console.log('No such document!');
       }

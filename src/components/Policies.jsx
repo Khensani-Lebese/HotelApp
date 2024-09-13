@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 // Styled components
 const Container = styled.div`
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 0;
+  max-width: 1900px;
+  margin: 0 ;
 `;
 
 const Navbar = styled.nav`
