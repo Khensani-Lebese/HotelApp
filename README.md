@@ -1,11 +1,4 @@
 
-
-
-![Image](https://github.com/user-attachments/assets/902095f7-b952-4d69-88aa-44bee01558e2)
-
-
-
-
 <<<<<<< HEAD
 # React + Vite
 
