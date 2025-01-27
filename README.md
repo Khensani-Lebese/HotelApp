@@ -1,15 +1,143 @@
-<<<<<<< HEAD
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
 # HotelApp
 
 WireFrame : https://www.figma.com/design/H0e3Doj1KWBRgHd0lnn8xx/HotelAppWireFrame?node-id=0-1&t=jkN8KdjYduBB6IwX-1
+
 DesignSchema: https://www.figma.com/board/bO1n0kPT8dN8QBvphXKQ0r/HotelAppWireDesign?node-id=0-1&node-type=CANVAS&t=8zl68jmH25VaiylA-0
->>>>>>> eff13e8fae015582460e829791e67b705ad2b93e
+
+### **User Side (Client Application)**
+
+1. **Authentication**
+
+   - Firebase Authentication for user registration and login.
+   - Secure user sessions with protected routes.
+
+2. **Accommodation Listings**
+
+   - View available accommodations with:
+     - **Photo Gallery**: Images of the hotel.
+     - **Map**: Location of the hotel.
+     - **Price Details**: Cost per night.
+     - **Basic Information**: Address, star rating, etc.
+     - **Facilities & Policies**: Amenities and policies.
+     - **Buttons**:
+       - Book Now
+       - Share
+       - Add to Favourites
+
+3. **Booking Functionality**
+
+   - Select check-in/check-out dates, rooms, and guests.
+   - Integration with a payment gateway for bookings.
+
+4. **User Profile**
+
+   - View and edit profile details.
+   - Manage bookings and favourite accommodations.
+
+5. **Search & Filter**
+
+   - Search accommodations based on location, price, rating, etc.
+
+6. **Reviews & Ratings**
+
+   - Leave reviews and ratings for accommodations.
+
+7. **Notifications**
+   - Real-time notifications for booking confirmations, updates, and promotions.
+
+### **Admin Side (Admin Panel)**
+
+1. **Admin Authentication**
+
+   - Secure login for admins.
+
+2. **Accommodation Management**
+
+   - Add new accommodations.
+   - Update existing accommodations (e.g., availability, pricing, descriptions).
+   - Delete accommodations.
+
+3. **Reservation Management**
+
+   - View all reservations, including guest and room details.
+   - Approve, modify, or cancel bookings.
+
+4. **Data Management**
+   - Real-time database updates with Firestore.
+
+### **Additional Features**
+
+- **Responsive Design**: Optimized for various screen sizes and devices.
+- **Scalability**: Designed to handle a large number of users and accommodations.
+- **Security**: Data protection and secure transactions.
+
+---
+
+## Tech Stack
+
+### **Frontend**
+
+- React.js
+- Redux (State Management)
+- React Router DOM (Routing)
+- CSS (Styled components)
+
+### **Backend**
+
+- Firebase Firestore (Database)
+- Firebase Authentication
+- Firebase Storage (Image uploads)
+- node
+
+### **Payment Integration**
+
+- Payment gateway of choice (Stripe).
+
+---
+
+## Installation & Setup
+
+### Prerequisites
+
+- Node.js (v16+)
+- npm or Yarn
+- Firebase project with Firestore, Authentication, and Storage configured.
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-repository-link.git
+
+   cd hotel-booking-app
+   ```
+
+Install dependencies:
+
+npm install
+
+Create a .env file in the root directory with your Firebase credentials:
+
+REACT_APP_API_KEY=your-api-key
+REACT_APP_AUTH_DOMAIN=your-auth-domain
+REACT_APP_PROJECT_ID=your-project-id
+REACT_APP_STORAGE_BUCKET=your-storage-bucket
+REACT_APP_MESSAGING_SENDER_ID=your-messaging-sender-id
+REACT_APP_APP_ID=your-app-id
+
+start the developement server:
+
+npm run dev
+
+start the back-end server:
+
+cd stripe-payment-backend
+
+node server.js
+
+#Admin Dashboard accessibility
+
+http://localhost:5173/admin/register
+
+SerialNumber = ft8@ag@techwave.co!(Implemented to be known by admins only so that it cannot be accessed by users)
